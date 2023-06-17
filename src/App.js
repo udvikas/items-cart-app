@@ -1,17 +1,30 @@
 import React from "react";
-import Create from "./component/Create";
-import { Route, Routes } from "react-router-dom";
-import Read from "./component/Read";
-import Edit from "./component/Edit";
+import Item from "./Item";
+import Cart from "./Cart";
+// import Counter from "./Counter";
+// import { counterContext } from "./Context/Context";
+
 
 function App() {
+
+  /*const counterCtx = useContext(counterContext);
+  console.log('appContext', counterCtx)*/
   return (
-    <div className="container">
-    <Routes>
-      <Route exact path="/" element={<Read/>}></Route>
-      <Route exact path="/create" element={<Create/>}></Route>
-      <Route exact path="/edit" element={<Edit/>}></Route>
-    </Routes>
+    <div style={{textAlign:'center'}}>
+      <Item name="Apple ipad" price={10000}/>
+      <hr />
+      <Item name="Digital Watch" price={20000}/>
+      <hr />
+      <Item name="Honor Mobile" price={30000}/>
+      <hr/>
+      <h2>Cart Store</h2>
+      <hr />
+      <Cart/>
+      {/* <h1>Count is {counterCtx.count} and {counterCtx.name}</h1>
+      <Counter/>
+      <Counter/>
+      <Counter/>
+      <Counter/> */}
     </div>
   );
 }
